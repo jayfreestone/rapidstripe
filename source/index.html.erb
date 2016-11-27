@@ -1,0 +1,18 @@
+---
+---
+
+<%=
+  partial(
+      'partials/_banner',
+      :locals => {
+          :title => 'We solve problems',
+          :content => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis metus est, eu aliquet arcu interdum eu. Mauris in tortor.',
+          :linkText => 'Read more',
+          :link => '/services'
+      }
+  )
+%>
+
+<div class="logo">
+  <%= image_tag "middleman-logo.svg" %>
+</div>

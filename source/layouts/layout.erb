@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title ? current_page.data.title + ' | ' : '' %>Rapidstripe</title>
+
+    <%= stylesheet_link_tag :site %>
+    <%= javascript_include_tag :site %>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="site-header__brand">
+          <a class="site-header__logo" href="/">
+            <svg class="site-header__logo-section site-header__logo-section--top" xmlns="http://www.w3.org/2000/svg" width="217.1" height="334.59" viewBox="0 0 217.1 334.59">
+              <polygon id="top" class="cls-1" points="217.1 56.67 0 220.26 0 163.59 217.1 0 217.1 56.67" fill="#fff"/>
+            </svg>
+            <svg class="site-header__logo-section site-header__logo-section--bottom" xmlns="http://www.w3.org/2000/svg" width="217.1" height="334.59" viewBox="0 0 217.1 334.59">
+              <polygon id="bottom" points="217.1 171 0 334.59 0 277.92 217.1 114.33 217.1 171" fill="#fff"/>
+            </svg>
+          </a>
+        </div>
+        <nav class="site-header__nav">
+          <ul>
+            <% for navItem in data.navigation.items %>
+                <li class="site-header__nav-item <%= 'site-header__nav-item--active' if navItem.slug == current_page.path.chomp('.html') %>">
+                  <a href="<%= navItem.slug %>"><%= navItem.name %></a>
+                </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div></header>
+    <%= yield %>
+  </body>
+</html>

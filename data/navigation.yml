@@ -1,0 +1,8 @@
+# Global site navigation
+items:
+  - name: Services
+    slug: services
+  - name: About
+    slug: about
+  - name: Contact
+    slug: contact

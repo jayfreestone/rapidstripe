@@ -1,0 +1,8 @@
+// Font families
+$primary-font-family: 'acumin-pro', sans-serif;
+$secondary-font-family: 'acumin-pro-condensed', sans-serif;
+
+// Consistent styles
+@mixin caps() {
+  text-transform: uppercase;
+};
